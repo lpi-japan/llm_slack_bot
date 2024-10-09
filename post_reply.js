@@ -68,7 +68,7 @@ const openai = new OpenAI({
       // OpenAI APIを使用してチャットの内容を処理
       const completion = await openai.chat.completions.create({
         model: "gpt-4o",
-        messages: scripts + chatHistory,
+        messages: scripts.concat(chatHistory),
       });
 
       const res = completion.choices[0].message.content;
