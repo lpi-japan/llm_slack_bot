@@ -50,7 +50,7 @@ const openai = new OpenAI({
   const threads = result.messages.filter(msg => msg.thread_ts && msg.bot_id);
 
   for (const thread of threads) {
-    const threadMessages = await client.conversations.replies({
+    const threadMessages = await app.client.conversations.replies({
       channel: channelId,
       ts: thread.thread_ts
     });
@@ -68,7 +68,7 @@ const openai = new OpenAI({
       // OpenAI APIを使用してチャットの内容を処理
       const completion = await openai.chat.completions.create({
         model: "gpt-4o",
-        messages: chatHistory,
+        messages: scripts + chatHistory,
       });
 
       const res = completion.choices[0].message.content;
