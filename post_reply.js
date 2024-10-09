@@ -39,7 +39,7 @@ const openai = new OpenAI({
 //アプリが起動時に呼ばれるメソッド
 (async () => {
   await app.start(process.env.PORT || 3000);
-  const oneMonthAgo = dayjs().subtract(1, 'month').unix();
+  const oneMonthAgo = Math.floor(new Date(new Date().setMonth(new Date().getMonth() - 1)).getTime() / 1000);
   const channelId = process.env.SLACK_CHANNEL;
 
   // チャンネル内のメッセージを取得
