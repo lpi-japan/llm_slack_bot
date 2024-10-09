@@ -50,4 +50,5 @@ const openai = new OpenAI({
     channel: process.env.SLACK_CHANNEL,
     text: res,
   });
+  process.exit();
 })();
