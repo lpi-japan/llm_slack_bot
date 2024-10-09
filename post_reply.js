@@ -43,7 +43,7 @@ const openai = new OpenAI({
   const channelId = process.env.SLACK_CHANNEL;
 
   // チャンネル内のメッセージを取得
-  const result = await client.conversations.history({
+  const result = await app.client.conversations.history({
       channel: channelId,
       oldest: oneMonthAgo
   });
