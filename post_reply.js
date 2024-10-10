@@ -3,7 +3,6 @@
 require("dotenv").config();
 
 const { App } = require('@slack/bolt');
-const { conversationContext } = require("@slack/bolt/dist/conversation-store");
 const { OpenAI } = require("openai");
 
 const scripts = [{
