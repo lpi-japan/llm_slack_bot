@@ -1,0 +1,33 @@
+name: Post slack example
+
+on: 
+  schedule:
+#    - cron: '0 3 * * *'
+    - cron: '0 9 * * *'
+#    - cron: '0 23 * * *'
+  workflow_dispatch:
+
+jobs: 
+  post-example:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+
+    - name: Create .env file
+      run: |
+        echo "OPENAI_API_KEY=${{secrets.OPENAI_API_KEY}}" > .env
+        echo "SLACK_BOT_TOKEN=${{secrets.SLACK_BOT_TOKEN}}" >> .env
+        echo "SLACK_SIGNING_SECRET=${{secrets.SLACK_SIGNING_SECRET}}" >> .env
+        echo "SLACK_CHANNEL=${{vars.SLACK_CHANNEL}}" >> .env
+
+    - name: Install dependencies
+      run: npm ci
+    
+    - name: Run script
+      run: node post_example.js
