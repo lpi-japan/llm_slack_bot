@@ -1,4 +1,4 @@
-name: Post slack example
+name: Post slack example ossdb
 
 on: 
   schedule:
