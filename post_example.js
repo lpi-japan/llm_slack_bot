@@ -7,10 +7,6 @@ const { OpenAI } = require("openai");
 const fs = require('fs');
 
 const topicSet = process.argv[2] ?? "linuc1";
-const channels = {
-  linuc1: process.env.SLACK_CHANNEL,
-  ossdb: process.env.SLACK_CHANNEL_OSSDB
-}
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -30,7 +26,7 @@ const openai = new OpenAI({
   const res = completion.choices[0].message.content;
   console.log(res);
   await app.client.chat.postMessage({
-    channel: channels[topicSet],
+    channel: process.env.SLACK_CHANNEL,
     text: res,
   });
   process.exit();
