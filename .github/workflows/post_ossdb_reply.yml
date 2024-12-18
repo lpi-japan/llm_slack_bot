@@ -1,14 +1,12 @@
-name: Post slack example
+name: Post reply
 
 on: 
   schedule:
-#    - cron: '0 3 * * *'
-    - cron: '0 9 * * *'
-#    - cron: '0 23 * * *'
+    - cron: '0 * * * *'
   workflow_dispatch:
 
 jobs: 
-  post-example:
+  post-reply:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,10 +22,10 @@ jobs:
         echo "OPENAI_API_KEY=${{secrets.OPENAI_API_KEY}}" > .env
         echo "SLACK_BOT_TOKEN=${{secrets.SLACK_BOT_TOKEN}}" >> .env
         echo "SLACK_SIGNING_SECRET=${{secrets.SLACK_SIGNING_SECRET}}" >> .env
-        echo "SLACK_CHANNEL=${{vars.SLACK_CHANNEL}}" >> .env
+        echo "SLACK_CHANNEL=${{vars.SLACK_CHANNEL_OSSDB}}" >> .env
 
     - name: Install dependencies
       run: npm ci
-    
+      
     - name: Run script
-      run: node post_example.js linuc1
+      run: node post_reply.js ossdb

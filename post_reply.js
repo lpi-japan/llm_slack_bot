@@ -4,10 +4,14 @@ require("dotenv").config();
 
 const { App } = require('@slack/bolt');
 const { OpenAI } = require("openai");
-
+const examNames = {
+  linuc1: 'LinuC Level1',
+  ossdb: 'OSS-DB Silver'
+}
+const topicSet = process.argv[2] ?? "linuc1";
 const scripts = [{
     role: 'system',
-    content: `linux初心者がコンソール操作をできるかどうかを確認する試験の選択問題を考えています。質問と選択肢 (正解1、不正解3) と解説の案を書いてください。
+    content: `試験の選択問題を考えています。質問と選択肢 (正解1、不正解3) と解説の案を書いてください。
               テンプレートは以下のとおりです。
                 ## 質問
                 xxxx
@@ -22,7 +26,7 @@ const scripts = [{
                 正解はXです。xxxx`
   }, {
     role: 'user',
-    content: 'LPI-Japanのlinux試験であるLinuC Level1の出題範囲の中から取りあげてください。'
+    content: 'LPI-Japanの試験である' + examNames[topicSet] + 'の出題範囲の中から取りあげてください。'
   }
 
 ]
