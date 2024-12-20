@@ -19,15 +19,16 @@ const openai = new OpenAI({
 
 //アプリが起動時に呼ばれるメソッド
 (async () => {
+  const script = createScript(topicSet);
   const completion = await openai.chat.completions.create({
     model: "gpt-4o",
-    messages: createScript(topicSet),
+    messages: script,
   });
   const res = completion.choices[0].message.content;
   console.log(res);
   await app.client.chat.postMessage({
     channel: process.env.SLACK_CHANNEL,
-    text: res,
+    text: createPostText(script[1].content,res),
   });
   process.exit();
 })();
@@ -60,4 +61,10 @@ function createScript(topicSet) {
       content: content[topicSet]
     }
   ]
+}
+
+function createPostText(script, text) {
+  return `>\`\`\`${script}\`\`\`
+  ${text}
+  `
 }
