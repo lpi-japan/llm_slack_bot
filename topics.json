@@ -44,52 +44,52 @@
       "ossdb" : [
         {
           "topic": "OSS-DBの一般的特徴",
-          "discription": "PostgreSQLの機能概要、ライセンス、OSSのコミュニティの役割などに関する理解を問う",
+          "description": "PostgreSQLの機能概要、ライセンス、OSSのコミュニティの役割などに関する理解を問う",
           "range": "PostgreSQLの機能全般、OSS-DBおよびOSS一般のライセンス、OSS-DBのコミュニティ、活動内容、参加方法など メジャーバージョン / マイナーバージョン / リリースサイクル / サポートポリシー / バグ報告"
         },
         {
           "topic": "リレーショナルデータベースに関する一般知識",
-          "discription": "リレーショナルデータベースの基本概念、一般的知識を問う",
+          "description": "リレーショナルデータベースの基本概念、一般的知識を問う",
           "range": "リレーショナルデータモデルの基本概念,データベース管理システムの役割,SQLに関する一般知識,SQLの分類 (DDL / DML / DCL),データベースの設計と正規化"
         },
         {
           "topic": "インストール方法",
-          "discription": "PostgreSQLのインストール方法、データベースクラスタの作成方法などに関する理解を問う",
+          "description": "PostgreSQLのインストール方法、データベースクラスタの作成方法などに関する理解を問う",
           "range": "initdbコマンドの使い方,データベースクラスタの概念と構造,テンプレートデータベース,重要な用語、コマンド、パラメータなど：,initdb,PGDATA,template0,template1"
         },
         {
           "topic": "標準付属ツールの使い方",
-          "discription": "OSのコマンドプロンプトから実行できる管理用ツールの使い方を問う",
+          "description": "OSのコマンドプロンプトから実行できる管理用ツールの使い方を問う",
           "range": "データベース管理用コマンドの使い方,重要な用語、コマンド、パラメータなど：,pg_ctl,createuser,dropuser,createdb,dropdb,psql,pg_config,pg_controldata,pg_isready,pg_resetwal,メタコマンド"
         },
         {
           "topic": "設定ファイル",
-          "discription": "設定ファイルの使い方、基本的な設定パラメータに関する知識を問う",
+          "description": "設定ファイルの使い方、基本的な設定パラメータに関する知識を問う",
           "range": "postgresql.confに関する以下の4項目　- 記述方法　- 接続と認証　- クライアント接続デフォルト　- エラー報告とログ取得,pg_hba.confの設定方法,SET/SHOWの使い方,重要な用語、コマンド、パラメータなど：,postgresql.conf,pg_hba.conf,pg_ctl reload/restart,pg_settings"
         },
         {
           "topic": "バックアップ方法",
-          "discription": "PostgreSQLのバックアップ方法に関する理解を問う",
+          "description": "PostgreSQLのバックアップ方法に関する理解を問う",
           "range": "各種バックアップコマンドの使い方,ファイルシステムレベルのバックアップとリストア,ポイントインタイムリカバリ(PITR)の概念と手順,トランザクションログ(WAL)とWALアーカイブ,非排他的低レベルバックアップ,postgresql.confに関する以下の項目　- Archive Recovery,COPY文(SQL)、¥copyコマンド(psql)の使い方,重要な用語、コマンド、パラメータなど：,pg_dump,pg_dumpall,pg_restore,psql,pg_basebackup,pg_start_backup(),pg_stop_backup(),backup_label,tablespace_map,PITR,postgresql.conf,recovery.signal,COPY,¥copy"
         },
         {
           "topic": "基本的な運用管理作業",
-          "discription": "データベース管理者として実行する基本的な運用管理コマンドに関する知識を問う",
+          "description": "データベース管理者として実行する基本的な運用管理コマンドに関する知識を問う",
           "range": "PostgreSQLの起動・停止方法,データベースロール / ユーザの概念,データベースロール / ユーザの追加・削除・変更方法,VACUUM、ANALYZEの目的と使い方 ,自動バキュームの概念と動作,システム情報関数,情報スキーマとシステムカタログ,テーブル単位の権限（GRANT/REVOKE）,重要な用語、コマンド、パラメータなど：,pg_ctl start / stop,CREATE/ALTER/DROP ROLE/USER,VACUUM,ANALYZE,vacuumdb,autovacuum,current_user,version,information_schema,GRANT"
         },
         {
           "topic": "SQL コマンド",
-          "discription": "基本的なSQL文およびデータベースの構成要素に関する知識を問うレプリケーションの基本機能、種類、特徴などの理解を問う",
+          "description": "基本的なSQL文およびデータベースの構成要素に関する知識を問うレプリケーションの基本機能、種類、特徴などの理解を問う",
           "range": "SELECT 文,INSERT 文,UPDATE 文,DELETE 文,データ型,テーブル定義,インデックス,ビュー,マテリアライズドビュー,トリガー,シーケンス,スキーマ,テーブルスペース,パーティション,関数定義 / プロシージャ定義,PL/pgSQL,ストリーミングレプリケーション,ロジカルレプリケーション,重要な用語、コマンド、パラメータなど：,SELECT/INSERT/UPDATE/DELETE,FROM,JOIN,WHERE,INTO,VALUES,SET,LIMIT,OFFSET,ORDER BY,DISTINCT,GROUP BY,HAVING,EXISTS,IN,NOT,INTEGER,SMALLINT,BIGINT,NUMERIC,DECIMAL,REAL,DOUBLE PRECISION,CHAR,CHARACTER,VARCHAR,CHARACTER VARYING,TEXT,BOOLEAN,DATE,TIME,TIMESTAMP,INTERVAL,GENERATED (AS IDENTITY),SERIAL,BIGSERIAL,BYTEA,JSON,JSONB,NULL,CREATE/ALTER/DROP TABLE,CREATE PUBLICATION/SUBSCRIPTION,PRIMARY KEY,FOREIGN KEY,REFERENCES,UNIQUE,NOT NULL,CHECK,DEFAULT,JSON PATH,CREATE/ALTER/DROP INDEX/VIEW/MATERIALIZED VIEW/TRIGGER/SCHEMA/SEQUENCE/TABLESPACE/FUNCTION/PROCEDURE,CALL,CREATE TABLE PARTITION BY/OF,ALTER TABLE ATTACH/DETACH PARTITION"
         },
         {
           "topic": "組み込み関数",
-          "discription": "データベースで標準的に利用できる関数および演算子に関する知識を問う",
+          "description": "データベースで標準的に利用できる関数および演算子に関する知識を問う",
           "range": "集約関数,算術関数,演算子,文字列関数,文字列演算子 / 述語,時間関数,重要な用語、コマンド、パラメータなど：,count,sum,avg,max,min,char(character)_length,lower,upper,substring,replace,trim,||,~,LIKE,SIMILAR TO,age,now,current_date,current_timestamp / statement_timestamp / clock_timestamp,current_time,extract,to_char"
         },
         {
           "topic": "トランザクションの概念",
-          "discription": "トランザクション機能に関する知識を問う",
+          "description": "トランザクション機能に関する知識を問う",
           "range": "トランザクションの構文,トランザクション分離レベル(リードコミッティド、リピータブルリード、シリアライザブル),LOCK 文,行ロックとテーブルロック,デッドロック,重要な用語、コマンド、パラメータなど：,BEGIN,COMMIT,ROLLBACK,SAVEPOINT,SET TRANSACTION,LOCK TABLE,SELECT FOR UPDATE / SHARE"
         }
       ]
