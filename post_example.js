@@ -38,7 +38,7 @@ function createScript(topicSet) {
   const topicNumber = Math.floor(Math.random()*topics.length);
   const content = {
     linuc1:'LPI-Japanのlinux試験であるLinuC Level1の出題範囲の中から「' + topics[topicNumber] + '」を取りあげてください。',
-    ossdb:'LPI-Japanのデータベース試験であるOSS-DB Silverの出題範囲の中から「' + topics[topicNumber]["topic"] + '」を取りあげてください。 ここで言う' + topics[topicNumber]["topic"] + 'とは、' + topics[topicNumber]["description"] + 'のことで、出題範囲は' + topics[topicNumber]["range"] + 'です。',
+    ossdb:'LPI-Japanのデータベース試験であるOSS-DB Silverの出題範囲の中から「' + topics[topicNumber]["topic"] + '」を取りあげてください。 ここで言う' + topics[topicNumber]["topic"] + 'とは、' + topics[topicNumber]["description"] + 'のことで、出題範囲は' + topics[topicNumber]["range"] + 'です。問題の趣旨によって、単なる知識問題ではなく、SQL文を設問に入れその結果を選択させるなど、読解のような要素をいれてもよいです。',
   }
   return [
     {
